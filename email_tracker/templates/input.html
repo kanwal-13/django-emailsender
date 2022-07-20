@@ -1,0 +1,27 @@
+{% extends 'home.html' %}
+
+{% block content %}
+<form method='post'>
+  {% csrf_token %}
+  <div class="mx-5 px-5 py-2 text-center fs-4">
+    <div class="mx-5 my-2 px-5 py-2 ">
+        <label for="exampleInputPassword1" class="form-label">{{form.name.label}}</label> 
+        {{form.name}}
+    </div>
+    <div class="mx-5 my-2 px-5 py-2  ">
+      <label for="exampleInputPassword1" class="form-label">{{form.email_address.label}}</label> 
+      {{form.email_address}}
+  </div>
+  <div class="mx-5 my-2 px-5 py-2 ">
+    <label for="exampleFormControlTextarea1">{{form.subject.label}}</label> 
+    {{form.subject}}
+  </div>
+  <div class="mx-5 mt-2 mb-5 px-5 py-2">
+    <label for="exampleFormControlTextarea1">{{form.message.label}}</label> 
+    {{form.message}}
+  </div>
+    <button type="submit" class="btn btn-primary fs-4">Send</button>
+</div>
+  </form>
+
+{% endblock %}
